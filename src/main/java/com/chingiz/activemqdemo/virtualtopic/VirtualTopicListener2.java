@@ -8,7 +8,7 @@ import javax.jms.Message;
 @Component
 public class VirtualTopicListener2 {
 
-    @JmsListener(destination = "VirtualTopicConsumers.consumer2.VirtualTopic.topic-1")
+    @JmsListener(destination = "VirtualTopicConsumers.consumer2.VirtualTopic.topic-1", containerFactory = "virtualTopicListenerFactory")
     public void receive(Message message) {
         System.out.println("Virtual topic consumer 2, message: " + message);
     }
